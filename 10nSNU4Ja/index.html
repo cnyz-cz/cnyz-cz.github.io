@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Ynoi 2010 Fusion tree | cnyz&#39;s Blog</title>
+<meta name="description" content="Try My Best">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cnyz-cz.github.io/favicon.ico?v=1633478922062">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cnyz-cz.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://cnyz-cz.github.io">
+        <img class="avatar" src="https://cnyz-cz.github.io/images/avatar.png?v=1633478922062" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://cnyz-cz.github.io">
+        <h1 class="site-title">cnyz&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://cnyz-cz.github.io/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+        
+          <a href="https://cnyz-cz.github.io/QtkxU-5FN" class="menu purple-link">
+            友链
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">Ynoi 2010 Fusion tree</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-05-30</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://cnyz-cz.github.io/xe31X9Kwe/">
+                    Trie
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://cnyz-cz.github.io/StqhuyHLE/">
+                    题解
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <ul>
+<li>https://www.luogu.com.cn/problem/P6018</li>
+</ul>
+<p>发现修改有一个是与距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>的所有节点有关，询问也是如此，考虑怎样维护这个玩意。</p>
+<p>显然可以考虑从距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 下手，距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，意味着要么是儿子，要么是父亲。</p>
+<p>所以，单独处理父亲，用某个神奇的数据结构维护儿子的异或和，支持全局加一、删除节点、加入节点即可。</p>
+<p>什么数据结构呢？<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>01</mn></mrow><annotation encoding="application/x-tex">01</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">1</span></span></span></span> Trie！</p>
+<p>我们维护两个量，一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span>，一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>o</mi><mi>r</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">xorv</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span> 表示当前节点的数的个数，考虑怎样自底向上更新。</p>
+<p>有：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mi>p</mi></msub><mo>=</mo><msub><mi>w</mi><mrow><mi>l</mi><mi>s</mi></mrow></msub><mo>+</mo><msub><mi>w</mi><mrow><mi>r</mi><mi>s</mi></mrow></msub><mspace linebreak="newline"></mspace><mi>x</mi><mi>o</mi><mi>r</mi><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mi>x</mi><mi>o</mi><mi>r</mi><msub><mi>v</mi><mrow><mi>l</mi><mi>s</mi></mrow></msub><mo>×</mo><mn>2</mn><mo>+</mo><mi>x</mi><mi>o</mi><mi>r</mi><msub><mi>v</mi><mrow><mi>r</mi><mi>s</mi></mrow></msub><mtext> or </mtext><mo>(</mo><msub><mi>w</mi><mrow><mi>r</mi><mi>s</mi></mrow></msub><mtext> and </mtext><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">w_p=w_{ls}+w_{rs}\\xorv_p=xorv_{ls}\times 2+xorv_{rs}\ \text{or}\ (w_{rs}\ \text{and}\ 1)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">x</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">x</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord text"><span class="mord">or</span></span><span class="mspace"> </span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord text"><span class="mord">and</span></span><span class="mspace"> </span><span class="mord">1</span><span class="mclose">)</span></span></span></span></span></p>
+<p>而全局加呢，发现这玩意比较 NB，为什么加的是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 啊？</p>
+<p>加了一，不就是从低位到高位找到第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，然后把后面的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 全变成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 吗？所以一路递归下去找第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，然后把两端儿子交换一下即可。</p>
+<p>没了么？还有！</p>
+<p>注意到我们只针对儿子进行了处理，加只是在 Trie 树上加的，考虑怎样处理。</p>
+<p>第二个问题很好解决，对每个点打个标记，表示自己的儿子要加多少。</p>
+<p>而父亲呢，如果父亲改了，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span> 操作 ，修改爷爷所在的 Trie 树，如果父亲没改，只改了自身，修改父亲所在的 Trie 树。</p>
+<p>Code：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+typedef double db;
+const int N=5e5,H=21;
+vector&lt;int&gt; e[N+2];
+int val[N+2],fa[N+2],laz[N+2];
+int rt[N+2],ch[N*25+2][2],w[N*25+2],xorv[N*25+2],cnt=0;
+void maintain(int p) {
+	w[p]=xorv[p]=0;
+	if(ch[p][0]) {
+		w[p]+=w[ch[p][0]];
+		xorv[p]^=xorv[ch[p][0]]&lt;&lt;1;
+	}
+	if(ch[p][1]) {
+		w[p]+=w[ch[p][1]];
+		xorv[p]^=(xorv[ch[p][1]]&lt;&lt;1)|(w[ch[p][1]]&amp;1);
+	}
+}
+int mknode() {
+	++cnt;ch[cnt][1]=ch[cnt][0]=w[cnt]=xorv[cnt]=0;
+	return cnt;
+}
+void insert(int &amp;p,int x,int dep) {
+	if(!p) p=mknode();
+	if(dep&gt;H) {w[p]++;return;}
+	insert(ch[p][x&amp;1],x&gt;&gt;1,dep+1);
+	maintain(p);
+}
+void erase(int &amp;p,int x,int dep) {
+	if(dep&gt;H) {w[p]--;return;}
+	erase(ch[p][x&amp;1],x&gt;&gt;1,dep+1);
+	maintain(p);
+}
+void addall(int p) {
+	swap(ch[p][0],ch[p][1]);
+	if(ch[p][0]) addall(ch[p][0]);
+	maintain(p);
+}
+int n,m,root=1;
+void dfs(int x,int f) {
+	fa[x]=f;
+	for(auto i:e[x])
+		if(i!=f) dfs(i,x);
+}
+int get(int x) {return (fa[x]==-1?0:laz[fa[x]])+val[x];}
+void solve() {
+	scanf(&quot;%d %d&quot;,&amp;n,&amp;m);
+	for(int i=1;i&lt;n;i++) {
+		int x,y;
+		scanf(&quot;%d %d&quot;,&amp;x,&amp;y);
+		e[x].push_back(y);e[y].push_back(x);
+	}
+	dfs(root,-1);
+	for(int i=1;i&lt;=n;i++) {
+		scanf(&quot;%d&quot;,&amp;val[i]);
+		if(fa[i]!=-1) insert(rt[fa[i]],val[i],0);
+	}
+	while(m--) {
+		int op,x,v;
+		scanf(&quot;%d %d&quot;,&amp;op,&amp;x);
+		if(op==1) {
+			laz[x]++;
+			if(x!=root) {
+				if(fa[fa[x]]!=-1) erase(rt[fa[fa[x]]],get(fa[x]),0);
+				val[fa[x]]++;
+				if(fa[fa[x]]!=-1) insert(rt[fa[fa[x]]],get(fa[x]),0);
+			}
+			addall(rt[x]);
+		}
+		if(op==2) {
+			scanf(&quot;%d&quot;,&amp;v);
+			if(fa[x]!=-1) erase(rt[fa[x]],get(x),0);
+			val[x]-=v;
+			if(fa[x]!=-1) insert(rt[fa[x]],get(x),0);
+		}
+		if(op==3) {
+			int res=xorv[rt[x]];
+			res^=get(fa[x]);
+			printf(&quot;%d\n&quot;,res);
+		}
+	}
+}
+int main() {
+	int t=1;
+	while(t--) solve();
+}
+</code></pre>
+<h4 id="实现细节trick">实现细节/Trick</h4>
+<ul>
+<li>本题不卡常。</li>
+<li>注意出现了一个限高的操作，这是为了使维护 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span> 的时候更加好写。</li>
+<li>维护周围节点时，考虑将父亲抽离，单个统计父亲贡献，整体统计儿子贡献。</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://cnyz-cz.github.io/rrzR7kHZO/">
+              <h3 class="post-title">
+                下一篇：CF/AT 泛做
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Try My Best</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://cnyz-cz.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '292fc1457ad539f2c812',
+        clientSecret: 'ad6616dbface777f166e732abcc7b5292377edc7',
+        repo: 'cnyz-cz.github.io',
+        owner: 'cnyz-cz',
+        admin: ['cnyz-cz'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

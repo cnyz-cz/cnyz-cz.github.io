@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://cnyz-cz.github.io</id>
+    <title>cnyz&apos;s Blog</title>
+    <updated>2021-10-06T00:08:46.576Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://cnyz-cz.github.io"/>
+    <link rel="self" href="https://cnyz-cz.github.io/atom.xml"/>
+    <subtitle>Try My Best</subtitle>
+    <logo>https://cnyz-cz.github.io/images/avatar.png</logo>
+    <icon>https://cnyz-cz.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, cnyz&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[2021 杂题乱做]]></title>
+        <id>https://cnyz-cz.github.io/bwdgis6kM/</id>
+        <link href="https://cnyz-cz.github.io/bwdgis6kM/">
+        </link>
+        <updated>2021-08-27T02:41:53.000Z</updated>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/hKLY0x"><img src="https://z3.ax1x.com/2021/08/27/hKLY0x.gif" alt="hKLY0x.gif" loading="lazy"></a></figure>
+<p>人的惰性是无法战胜的，所以本文缓鸽。</p>
+]]></summary>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/hKLY0x"><img src="https://z3.ax1x.com/2021/08/27/hKLY0x.gif" alt="hKLY0x.gif" loading="lazy"></a></figure>
+<p>人的惰性是无法战胜的，所以本文缓鸽。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ABC215  部分题解]]></title>
+        <id>https://cnyz-cz.github.io/m_0LqVEA9/</id>
+        <link href="https://cnyz-cz.github.io/m_0LqVEA9/">
+        </link>
+        <updated>2021-08-22T01:42:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>被迫营业.jpg</p>
+<p>赛场上和 xgy 开黑成功过了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 题，上了大分十分开心。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>被迫营业.jpg</p>
+<p>赛场上和 xgy 开黑成功过了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 题，上了大分十分开心。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2021.8.7 队测题解]]></title>
+        <id>https://cnyz-cz.github.io/tSMWgamCE/</id>
+        <link href="https://cnyz-cz.github.io/tSMWgamCE/">
+        </link>
+        <updated>2021-08-09T01:49:47.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2021.8.2 队测题解]]></title>
+        <id>https://cnyz-cz.github.io/jvk5Rjsz5/</id>
+        <link href="https://cnyz-cz.github.io/jvk5Rjsz5/">
+        </link>
+        <updated>2021-08-09T00:21:25.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[非传统题型选讲]]></title>
+        <id>https://cnyz-cz.github.io/D6zHOsdQz/</id>
+        <link href="https://cnyz-cz.github.io/D6zHOsdQz/">
+        </link>
+        <updated>2021-07-19T09:09:13.000Z</updated>
+        <summary type="html"><![CDATA[<p>本处的非传统题，指构造、交互、提答、通信等这一类较传统问题不同，解法不普遍的题型。</p>
+<p>本文将会讲解一些这样的题，并给出一些题的通用方法。</p>
+<p><a href="https://www.luogu.com.cn/training/87227">配套题单</a>。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本处的非传统题，指构造、交互、提答、通信等这一类较传统问题不同，解法不普遍的题型。</p>
+<p>本文将会讲解一些这样的题，并给出一些题的通用方法。</p>
+<p><a href="https://www.luogu.com.cn/training/87227">配套题单</a>。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[多项式学习笔记]]></title>
+        <id>https://cnyz-cz.github.io/jQJQ7wOT6/</id>
+        <link href="https://cnyz-cz.github.io/jQJQ7wOT6/">
+        </link>
+        <updated>2021-07-11T01:39:37.000Z</updated>
+        <summary type="html"><![CDATA[<p>发现自己的多项式水平菜到不行，所以写篇文章记录一下。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>发现自己的多项式水平菜到不行，所以写篇文章记录一下。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WF 2014 Baggage]]></title>
+        <id>https://cnyz-cz.github.io/u_yAc8WQf/</id>
+        <link href="https://cnyz-cz.github.io/u_yAc8WQf/">
+        </link>
+        <updated>2021-06-14T11:23:58.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ynoi 2010 Fusion tree]]></title>
+        <id>https://cnyz-cz.github.io/10nSNU4Ja/</id>
+        <link href="https://cnyz-cz.github.io/10nSNU4Ja/">
+        </link>
+        <updated>2021-05-30T06:56:06.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CF/AT 泛做]]></title>
+        <id>https://cnyz-cz.github.io/rrzR7kHZO/</id>
+        <link href="https://cnyz-cz.github.io/rrzR7kHZO/">
+        </link>
+        <updated>2021-05-28T07:37:07.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HNOI 2010 弹飞绵羊 Flying Sheep]]></title>
+        <id>https://cnyz-cz.github.io/KTyO1hFKb/</id>
+        <link href="https://cnyz-cz.github.io/KTyO1hFKb/">
+        </link>
+        <updated>2021-05-15T01:08:39.000Z</updated>
+    </entry>
+</feed>
